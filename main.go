@@ -1,6 +1,7 @@
 package main
 
 import (
+<<<<<<< HEAD
         "encoding/json"
         "log"
         "net/http"
@@ -41,3 +42,12 @@ func main() {
 
 }
 
+=======
+	"log"
+	"net/http"
+)
+
+func main() {
+	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+}
+>>>>>>> b60376713497a2e4d7fc21a5c23f92c8d9e561ce
