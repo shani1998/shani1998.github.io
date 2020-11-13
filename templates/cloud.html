@@ -12,28 +12,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-      <link rel="icon" type="image/png" href="images/logo.png">
+      <link rel="icon" type="image/png" href="../static/images/logo.png">
       <link rel="shortcut icon" href="kisspng-wechat-avatar-icon-line-v-word-5a715fe8a66dc6.6173848315173795606817.png">
       <link rel="icon" type="image/png" href="kisspng-wechat-avatar-icon-line-v-word-5a715fe8a66dc6.6173848315173795606817.png">
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
       <!-- Animate.css -->
-      <link rel="stylesheet" href="css/animate.css">
-      <!-- Icomoon Icon Fonts-->
-      <link rel="stylesheet" href="css/icomoon.css">
+      <link rel="stylesheet" href="../static/css/animate.css">
+
       <!-- Bootstrap  -->
-      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="../static/css/bootstrap.css">
       <!-- Flexslider  -->
-      <link rel="stylesheet" href="css/flexslider.css">
+      <link rel="stylesheet" href="../static/css/flexslider.css">
       <!-- Flaticons  -->
-      <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-      <!-- Owl Carousel -->
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="../static/fonts/flaticon/font/flaticon.css">
       <!-- Theme style  -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="../static/css/style.css">
       <!-- Modernizr JS -->
-      <script src="js/modernizr-2.6.2.min.js"></script>
+      <script src="../static/js/modernizr-2.6.2.min.js"></script>
    </head>
    <!--- Github ribbon ----------->
    <a href="https://github.com/shani1998" class="github-corner" aria-label="View source on GitHub">
@@ -50,45 +46,36 @@
             <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a> 
             <!----Side bar--->
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight" style="background-color:#2C3E50;padding:20px;">
-                <div class="text-center">
-                    <div class="author-img" style="background-image: url(images/skp.jpg);"></div>
-                    <h1 id="colorlib-logo"><a href="https://github.com/shani1998" style="color:antiquewhite">Shani Pathak</a></h1>
-                    <p><strong style="color: azure;">Machine Learning | Data Science</strong></p>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
-                    <div id="navbar" class="collapse">
+               <div class="text-center">
+                     <div class="author-img" style="background-image: url(../static/images/skp.jpg);"></div>
+                     <h1 id="colorlib-logo"><a href="https://github.com/shani1998" style="color:antiquewhite">Shani Pathak</a></h1>
+                     <p><strong style="color: azure;">Cloud Developer | Golang | Devops</strong></p>
+               </div>
+               <nav id="colorlib-main-menu" role="navigation" class="navbar">
+                     <div id="navbar" class="collapse">
                         <ul>
-                            <li><a href="https://shani1998.github.io/" data-nav-section="about" style ="color: #ccc;">Home</a></li>
+                           <li><input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Home"/></li>
                         </ul>
-                    </div>
-                </nav>
-                </aside>
-
+                     </div>
+               </nav>
+               </aside>
             <div id="colorlib-main">
                <section class="colorlib-about" data-section="about">
                   <div class="colorlib-narrow-content">
                      <div class="row">
-                        <div class="col-md-12"></div>
+                        <div class="col-md-12">
                            <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                               <div class="col-md-12">
                                  <div class="about-desc">
-                                    <h2>Machine Learning and Artificial Intelligence</h2>
+                                    <h2>Cloud, Devops And Golang</h2>
                                     <hr>
-                                    <h4><strong>Cancer Detection</strong></h4>
-                                    <p>
-                                        Using patient medical record and gene data we provide an AI Platform which helps the cancer experts to ensure
-                                        whether patient is affected by cancer or not with high accuracy and less effort, using Naive Bayes and KNN Algorithms.<br>
-                                        <strong>Skills Used:</strong> Python3.7, NumPy, Pandas, Scikit-learn, Machine Learning, NLP.<br>
-                                        <strong>Dataset & Descriptions:</strong> <a href="https://www.kaggle.com/c/msk-redefining-cancer-treatment">Personalized Medicine: Redefining Cancer Treatment</a> 
-                                    </p>
+                                    <h4><strong>Mysql Paas for database services</strong></h4>
+                                    <p>Working on providing Mysql DBaaS over kubernetes platform using open source percona xtradb cluster operator for multimaster and Presslabs Operator for master-slave.<br>
+                                    <strong>Technologies uses:</strong> MySQL, Percona, Galera, kubernetes, Presslabs, Openark.</p>
                                     <br><br>
-                                    <h4><strong>Apparel Recommendation Engine Workshop</strong></h4>
-                                    <p>
-                                        It was online Workshop conducted by <a href="https://www.appliedaicourse.com/">Applied AI Course</a>on Amazon Apparel Recommendation Engine, 
-                                        where i leant how to build an machine learning model from scratch using various python machine learinng libraries and estimated accuracy using various supervised machine learning algorithms.<br>
-                                        <strong>Skills Used:</strong> Python3.7, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn.<br>
-                                        <strong>Dataset:</strong>The data has been taken from Amazon.com in a policy compliant manner.                                  
-                                    </p>
+                                    <h4><strong>Backup/DR as a service for Kubernetes objects</strong></h4>
+                                    <p>we are providing backup/dr and restore services for each and every kubernetes objects including PV data and restoring over kubernetes platform using open source velero controller with modifications as per our need.<br>
+                                    <strong>Used Technologies:</strong> Golang, rook-s3, Kubernetes, prometheus.</p>
                                  </div>
                               </div>
                            </div>
@@ -104,7 +91,10 @@
                               <div class="col-md-12">
                                  <div class="about-desc">
                                     <h3 class="colourlib-heading">MOOCS</h3>
-                                    
+                                    <h4><a href="https://www.coursera.org/account/accomplishments/certificate/FJYPCBM3WAYS"><strong>AWS Fundamentals: Going Cloud-Native
+                                    </strong></a></h4>
+                                    <p>This course provides a broad introduction to aws, learnt basics of services like provisioning EC2 instances, Netowrking (VPC, subnet, CIDR), Storage(EBS, EFS, S3, RDS), ELB and cloudwatch</p>
+        
                                  </div>
                               </div>
                            </div>
@@ -116,20 +106,19 @@
          </div>
       </div>
       <!-- jQuery -->
-      <script src="js/jquery.min.js"></script>
+      <script src="../static/js/jquery.min.js"></script>
       <!-- jQuery Easing -->
-      <script src="js/jquery.easing.1.3.js"></script>
+      <script src="../static/js/jquery.easing.1.3.js"></script>
       <!-- Bootstrap -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="../static/js/bootstrap.min.js"></script>
       <!-- Waypoints -->
-      <script src="js/jquery.waypoints.min.js"></script>
+      <script src="../static/js/jquery.waypoints.min.js"></script>
       <!-- Flexslider -->
-      <script src="js/jquery.flexslider-min.js"></script>
-      <!-- Owl carousel -->
-      <script src="js/owl.carousel.min.js"></script>
+      <script src="../static/js/jquery.flexslider-min.js"></script>
+
       <!-- Counters -->
-      <script src="js/jquery.countTo.js"></script>
+      <script src="../static/js/jquery.countTo.js"></script>
       <!-- MAIN JS -->
-      <script src="js/main.js"></script>
+      <script src="../static/js/main.js"></script>
    </body>
 </html>

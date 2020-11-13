@@ -270,7 +270,8 @@
 	var owlCrouselFeatureSlide = function() {
 		$('.owl-carousel').owlCarousel({
 			animateOut: 'fadeOut',
-		   animateIn: 'fadeIn',
+			navigation : true,
+			animateIn: 'fadeIn',
 		   autoplay: true,
 		   loop:true,
 		   margin:0,
