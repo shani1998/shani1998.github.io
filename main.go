@@ -1,7 +1,7 @@
 package main
 
 import (
-        "encoding/json"
+        "fmt"
         "log"
         "net/http"
         "net/smtp"
@@ -12,19 +12,23 @@ type contactForm struct {
         Email string `json:"email"`
         Message string `json:"message"`
 }
-func sendEmail(rw http.ResponseWriter, req *http.Request) {
-        c := &contactForm{}
-        json.NewDecoder(req.Body).Decode(c)
+func sendEmail(w http.ResponseWriter, r *http.Request) {
+        if r.Method=="POST"{
+            name := r.FormValue("name")
+            email := r.FormValue("email")
+            message := r.FormValue("message")
+            to := "shani.pathak98@gmail.com"
+            subject := "Portfolio-Contact"
+            body := "To: " + to + "\r\nSubject: " + subject + "\r\n\r\n" + "Name: " + name + "\r\n\r\n" + "Email: " + email + "\r\n\r\n" + "\r\n\r\n" + "Message: " + message
+            auth := smtp.PlainAuth("", "skp80248@gmail.com", "vgmipaletguctnmv\n", "smtp.gmail.com")
+            err := smtp.SendMail("smtp.gmail.com:587", auth,"skp80248@gmail.com" , []string{to},[]byte(body))
+            if err != nil {
+                    fmt.Fprintln(w,"ERROR: attempting to send a mail ", err)
+            } else {
+                    fmt.Fprintln(w,`<script type="text/javascript">alert("mail sent successfully!"); window.location = '/';</script>`)
+            }
 
-        to := "shani.pathak98@gmail.com"
-        subject := "Portfolio-Contact"
-        body := "To: " + to + "\r\nSubject: " + subject + "\r\n\r\n" + "Name: " + c.Name + "\r\n\r\n" + "Email: " + c.Email + "\r\n\r\n" + "\r\n\r\n" + "Message: " + c.Message + "\r\n\r\n" + "OK to contact?: "
-        auth := smtp.PlainAuth("", "***GMAIL USERNAME***", "***PASSWORD***", "smtp.gmail.com")
-        err := smtp.SendMail("smtp.gmail.com:587", auth, "***GMAIL USERNAME***", []string{to},[]byte(body))
-        if err != nil {
-                log.Print("ERROR: attempting to send a mail ", err)
         }
-
 }
 
 func main() {

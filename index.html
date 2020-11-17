@@ -10,6 +10,7 @@
       <meta name="author" content="Shani Pathak" />
       <!--Social Media icons--> 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
       <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
       <link rel="icon" type="image/png" href="static/images/logo.png">
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
@@ -310,7 +311,7 @@
                   </div>
                </section>
 
-<!-------------------------------Work Experience---------------------------------->
+               <!-------------Work Experience---------------------->
                <section class="colorlib-experience" data-section="experience">
                   <div class="colorlib-narrow-content">
                      <div class="row">
@@ -373,6 +374,7 @@
                      </div>
                   </div>
                </section>
+
               <!----------------Education---------------->
                 <section class="colorlib-experience" data-section="experience">
                   <div class="colorlib-narrow-content">
@@ -404,6 +406,7 @@
                      </div>
                   </div>
                </section>
+
                <!--------Contact---------->
                <section class="colorlib-contact" data-section="contact">
                   <div class="colorlib-narrow-content">
@@ -420,8 +423,8 @@
                </section>
 
                <!--------Send Email ------->
-               <div class="row">
-                  <form id="contactForm" >
+               <section class="colorlib-installation" >
+                  <form id="contactForm" action="/sendEmail" method="POST">
                      <div class="col-sm-6 form-group">
                         <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
                      </div>
@@ -433,7 +436,7 @@
                         <button class="btn btn-default pull-right" type="submit">Send</button>
                      </div>
                   </form>
-               </div>
+               </section>
 
 
                <!------------Footer------------->
@@ -467,37 +470,7 @@
          <!-- end:container-wrap -->
       </div>
       <!-- end:colorlib-page -->
-      <!-- Send Email Req --->
-      <script>
-         (function ($) {
-            $.fn.serializeFormJSON = function () {
 
-               var o = {};
-               var a = this.serializeArray();
-               $.each(a, function () {
-                  if (o[this.name]) {
-                     if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                     }
-                     o[this.name].push(this.value || '');
-                  } else {
-                     o[this.name] = this.value || '';
-                  }
-               });
-               return o;
-            };
-         })(jQuery);
-
-         $(document).ready(function() {
-            $("#contactForm").submit(function(event) {
-               event.preventDefault();
-               var data = $(this).serializeFormJSON();
-               var json = JSON.stringify(data);
-               console.log(json);
-               $.post( "/sendEmail", json);
-            });
-         });
-      </script>
       <!-- jQuery -->
       <script src="static/js/jquery.min.js"></script>
       <!-- jQuery Easing -->
