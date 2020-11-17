@@ -20,7 +20,7 @@ func sendEmail(w http.ResponseWriter, r *http.Request) {
             to := "shani.pathak98@gmail.com"
             subject := "Portfolio-Contact"
             body := "To: " + to + "\r\nSubject: " + subject + "\r\n\r\n" + "Name: " + name + "\r\n\r\n" + "Email: " + email + "\r\n\r\n" + "\r\n\r\n" + "Message: " + message
-            auth := smtp.PlainAuth("", "skp80248@gmail.com", "vgmipaletguctnmv\n", "smtp.gmail.com")
+            auth := smtp.PlainAuth("", "skp80248@gmail.com", "**pass**\n", "smtp.gmail.com")
             err := smtp.SendMail("smtp.gmail.com:587", auth,"skp80248@gmail.com" , []string{to},[]byte(body))
             if err != nil {
                     fmt.Fprintln(w,"ERROR: attempting to send a mail ", err)
