@@ -60,12 +60,12 @@ func main() {
 		},
 	}
 
-	logger.Printf("Starting portfolio server....")
+	logger.Printf("Starting portfolio svc....")
 	http.HandleFunc("/sendEmail", sendEmail)
 	http.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("./static"))))
 	http.Handle("/templates/", http.StripPrefix("/templates", http.FileServer(http.Dir("./templates"))))
 	http.Handle("/", http.FileServer(http.Dir(".")))
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
-		log.Errorf("failed to start portfolio server, Reason %v", err)
+		log.Errorf("failed to start portfolio svc, Reason %v", err)
 	}
 }

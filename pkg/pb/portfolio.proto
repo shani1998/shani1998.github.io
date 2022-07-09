@@ -14,7 +14,7 @@ message SkillResponse {
 
 message Skill {
   string name = 1;
-  int32 proficient = 2;
+  string proficient = 2;
 }
 
 // The portfolio service definition.
