@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package portfolio;
+option go_package = "github.com/shani1998/shani1998.github.io/pkg/pb";
+
+
+message SkillRequest {}
+
+// The response message containing the skills
+message SkillResponse {
+  string description = 1;
+  repeated Skill skill = 2;
+}
+
+message Skill {
+  string name = 1;
+  int32 proficient = 2;
+}
+
+// The portfolio service definition.
+service portfolio {
+  // return list of skills
+  rpc ListSkills(SkillRequest) returns (SkillResponse) {};
+}
