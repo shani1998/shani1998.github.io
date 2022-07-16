@@ -2,9 +2,11 @@ package main
 
 import (
 	"context"
-	"log"
+	"html/template"
+	"net/http"
 
 	"github.com/shani1998/shani1998.github.io/pkg/pb"
+	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -22,10 +24,29 @@ func main() {
 
 	cl := pb.NewPortfolioClient(conn)
 
-	skills, err := cl.ListSkills(context.Background(), &pb.SkillRequest{})
-	if err != nil {
-		log.Fatalf("failed to list skills: %v", err)
+	// index route
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+		skills, err := cl.ListSkills(context.Background(), &pb.SkillRequest{})
+		if err != nil {
+			log.Fatalf("failed to list skills: %v", err)
+		}
+
+		log.Printf("skills: %v", skills)
+
+		t, err := template.ParseFiles(staticFilesDir + "/index.html")
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		if err := t.Execute(w, skills); err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+	})
+
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Errorf("failed to start portfolio svc, Reason %v", err)
 	}
 
-	log.Printf("skills: %v", skills)
 }

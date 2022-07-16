@@ -900,6 +900,8 @@ margin-left: 10px;}
     position: absolute;
     top: -22px;
     right: -32px; }
+.progress-bar.color-0 {
+  background: #0028ef; }
   .progress-bar.color-1 {
     background: #2c98f0; }
     .progress-bar.color-1:after {

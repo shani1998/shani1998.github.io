@@ -1,7 +1,12 @@
 package main
 
 import (
+	"context"
 	"fmt"
+	"github.com/shani1998/shani1998.github.io/pkg/pb"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
+	"html/template"
 	"net/http"
 	"net/smtp"
 	"os"
@@ -43,29 +48,90 @@ func sendEmail(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
-	// retrieve port variable set by heroku
-	// https://devcenter.heroku.com/articles/getting-started-with-go#define-config-vars
-	port := os.Getenv("PORT")
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
-	logger := &log.Logger{
-		Out:   os.Stderr,
-		Level: log.DebugLevel,
-		Formatter: &log.TextFormatter{
-			DisableColors:   false,
-			TimestampFormat: "2006-01-02 15:04:05",
-			FullTimestamp:   true,
-		},
-	}
+//func main() {
+//	// retrieve port variable set by heroku
+//	// https://devcenter.heroku.com/articles/getting-started-with-go#define-config-vars
+//	//port := os.Getenv("PORT")
+//	//if port == "" {
+//	//	log.Fatal("$PORT must be set")
+//	//}
+//	logger := &log.Logger{
+//		Out:   os.Stderr,
+//		Level: log.DebugLevel,
+//		Formatter: &log.TextFormatter{
+//			DisableColors:   false,
+//			TimestampFormat: "2006-01-02 15:04:05",
+//			FullTimestamp:   true,
+//		},
+//	}
+//
+//	logger.Printf("Starting portfolio svc....")
+//	http.HandleFunc("/sendEmail", sendEmail)
+//	http.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("./static"))))
+//	http.Handle("/templates/", http.StripPrefix("/templates", http.FileServer(http.Dir("./templates"))))
+//	http.HandleFunc("/", loginHandler)
+//	if err := http.ListenAndServe(":8080", nil); err != nil {
+//		log.Errorf("failed to start portfolio svc, Reason %v", err)
+//	}
+//}
+//
+//func loginHandler(w http.ResponseWriter, r *http.Request) {
+//
+//	// do whatever you need to do
+//
+//	myvar := map[string]interface{}{"MyVar": "Foo Bar Baz"}
+//	outputHTML(w, "index.html", myvar)
+//}
+//
+//func outputHTML(w http.ResponseWriter, filename string, data interface{}) {
+//	t, err := template.ParseFiles(filename)
+//	if err != nil {
+//		http.Error(w, err.Error(), 500)
+//		return
+//	}
+//	if err := t.Execute(w, data); err != nil {
+//		http.Error(w, err.Error(), 500)
+//		return
+//	}
+//}
 
-	logger.Printf("Starting portfolio svc....")
-	http.HandleFunc("/sendEmail", sendEmail)
-	http.Handle("/static/", http.StripPrefix("/static", http.FileServer(http.Dir("./static"))))
-	http.Handle("/templates/", http.StripPrefix("/templates", http.FileServer(http.Dir("./templates"))))
-	http.Handle("/", http.FileServer(http.Dir(".")))
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
+const (
+	Addr           = "127.0.0.1:50051"
+	staticFilesDir = "/Users/spathak/projects/shani1998.github.io/"
+)
+
+func main() {
+	conn, err := grpc.DialContext(context.Background(), Addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		log.Fatalf("Failed to dial: %v", err)
+	}
+	defer conn.Close()
+
+	cl := pb.NewPortfolioClient(conn)
+
+	// index route
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+		skills, err := cl.ListSkills(context.Background(), &pb.SkillRequest{})
+		if err != nil {
+			log.Fatalf("failed to list skills: %v", err)
+		}
+
+		log.Printf("skills: %v", skills)
+
+		t, err := template.ParseFiles(staticFilesDir + "/index.html")
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		if err := t.Execute(w, skills); err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
+	})
+
+	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Errorf("failed to start portfolio svc, Reason %v", err)
 	}
+
 }
