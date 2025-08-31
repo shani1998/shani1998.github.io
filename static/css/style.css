@@ -58,6 +58,13 @@ h2{
   font-weight: 200;
   margin: 0 0 20px 0;
 }
+/* Gradient underline accent for section headers */
+.colorlib-narrow-content h2 + hr {
+  height: 4px;
+  border: 0;
+  margin-top: -10px;
+  background: linear-gradient(90deg, #2c98f0 0%, #2fa499 50%, #a84cb8 100%);
+}
 h3{
     color: #000;
   font-family: "Playfair Display", Georgia, serif;
@@ -746,6 +753,11 @@ margin-left: 10px;}
   -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
   box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
   border-bottom: 2px solid #2c98f0; }
+  .services:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.25);
+    transition: all 220ms ease;
+  }
   .services .icon2 {
     display: block;
     margin-bottom: 20px; }
