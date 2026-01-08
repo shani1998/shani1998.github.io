@@ -1,0 +1,54 @@
+name: Dependabot auto-approve
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  pull-requests: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: dependabot-auto-approve-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.draft == false }}
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine merge state
+        id: merge-state
+        run: |
+          state=$(gh pr view --json mergeStateStatus -q .mergeStateStatus "$PR_URL" || echo "UNKNOWN")
+          echo "merge state: $state"
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+
+      - name: Handle Dependabot PR
+        if: ${{ steps.merge-state.outputs.state != 'BEHIND' && steps.merge-state.outputs.state != 'DIRTY' }}
+        env:
+          UPDATE_TYPE: ${{ steps.dependabot-metadata.outputs.update-type }}
+          IS_SECURITY: ${{ steps.dependabot-metadata.outputs.is-security-update }}
+          DEPS: ${{ steps.dependabot-metadata.outputs.dependency-names }}
+        run: |
+          # Auto-approve all Dependabot PRs
+          echo "::notice::Auto-approving Dependabot PR: $DEPS ($UPDATE_TYPE)"
+          if [[ "$(gh pr view --json reviewDecision -q .reviewDecision "$PR_URL")" != "APPROVED" ]]; then
+            gh pr review --approve "$PR_URL" --body "Auto-approved Dependabot $UPDATE_TYPE update"
+          fi
+          gh pr merge --auto --squash "$PR_URL" || echo "::warning::Auto-merge failed"
+
+      - name: Request rebase if behind
+        if: ${{ steps.merge-state.outputs.state == 'BEHIND' }}
+        run: |
+          echo "::notice::Requesting rebase - PR is behind base"
+          gh pr comment "$PR_URL" --body "@dependabot rebase"
