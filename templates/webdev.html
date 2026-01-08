@@ -28,6 +28,7 @@
    <link rel="stylesheet" href="../static/fonts/flaticon/font/flaticon.css">
    <!-- Theme style  -->
    <link rel="stylesheet" href="../static/css/style.css">
+   <link rel="stylesheet" href="../static/css/card.css">
    <!-- Modernizr JS -->
    <script src="../static/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -48,40 +49,25 @@
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight" style="background-color:#2C3E50;padding:20px;">
                 <div class="text-center">
                     <div class="author-img" style="background-image: url(../static/images/skp.jpeg);"></div>
-                    <h1 id="colorlib-logo"><a href="https://github.com/shani1998" style="color:antiquewhite">Shani Pathak</a></h1>
-                    <p><strong style="color: azure;">Web Developer</strong></p>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
-                    <div id="navbar" class="collapse">
-                        <ul>
-                           <li><input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Home"/></li>
-                        </ul>
+                    <h1 id="colorlib-logo"><a href="../index.html" style="color:antiquewhite">Shani Pathak</a></h1>
+                    <p><strong style="color: azure;">Senior Software Engineer at Infoblox</strong></p>
+                    <p style="color:#d9edf7;margin-bottom:20px;">Golang • Microservices • K8s • Cloud-Native • IPAM • Multi-Cloud • Agentic AI</p>
+                    
+                    <!-- Back to Portfolio Button -->
+                    <a href="../index.html" style="display: inline-block; background: #007b5e; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin: 15px 0;">
+                        <i class="fa fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    
+                    <!-- Social Icons -->
+                    <div style="margin-top: 25px;">
+                        <a href="https://www.linkedin.com/in/cloudnativeengineer1/" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://github.com/shani1998" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-github"></i></a>
+                        <a href="mailto:shanipathak88@gmail.com" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-envelope"></i></a>
                     </div>
-                </nav>
-                </aside>
+                </div>
+            </aside>
 
             <div id="colorlib-main">
-               <section class="colorlib-about" data-section="about">
-                  <div class="colorlib-narrow-content">
-                     <div class="row">
-                        <div class="col-md-12"></div>
-                           <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                              <div class="col-md-12">
-                                 <div class="about-desc">
-                                    <h2>Web Development</h2>
-                                    <hr>
-                                    <h4><strong>Railway Reservation System</strong></h4>
-                                    <p>It was a responsive web application which deals with the reservation and cancellation of railway ticket to the passengers. <br>
-                                        <strong>Skills Used:</strong> Html, CSS, Bootstrap, JavaScript, Php, MySQL.<br>
-                                    </p>
-                                    <br><br>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </section>
                <section class="colorlib-about" data-section="about">
                   <div class="colorlib-narrow-content">
                      <div class="row">
@@ -89,11 +75,43 @@
                            <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                               <div class="col-md-12">
                                  <div class="about-desc">
-                                    <h3 class="colourlib-heading">MOOCS</h3>
-                                    
+                                    <h2>Web Development</h2>
+                                    <hr>
+                                    <p>Full stack web applications and responsive design.</p>
                                  </div>
                               </div>
                            </div>
+
+                             <!-- Project Cards -->
+                             <div class="row">
+                                <!-- Project 1 -->
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                   <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                      <div class="mainflip">
+                                         <div class="frontside">
+                                            <div class="card">
+                                               <div class="card-body text-center">
+                                                  <p><i class="fa fa-train fa-4x" style="color:#2C3E50; margin-top:20px;"></i></p>
+                                                  <h4 class="card-title">Railway Reservation</h4>
+                                                  <p class="card-text">Reservation and cancellation system for railway tickets.</p>
+                                                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i> Flip Details</a>
+                                               </div>
+                                            </div>
+                                         </div>
+                                         <div class="backside">
+                                            <div class="card">
+                                               <div class="card-body text-center mt-4">
+                                                  <h4 class="card-title">Railway System</h4>
+                                                  <p class="card-text">Responsive web application handling complex booking logic and user management.</p>
+                                                  <p class="card-text"><strong>Tech:</strong><br>PHP, MySQL, Bootstrap, JS</p>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+
                         </div>
                      </div>
                   </div>

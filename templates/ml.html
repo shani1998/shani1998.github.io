@@ -3,7 +3,7 @@
    <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>Shani Pathak - Machine Learning and Artificial Intelligence</title>
+   <title>Shani Pathak - Agentic AI & ML</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="description" content="Portfolio webpage of Shani Pathak" />
    <meta name="keywords" content="cloud developer,portfolio,website,personal website,github,computer science and engineering" />
@@ -28,6 +28,8 @@
    <link rel="stylesheet" href="../static/fonts/flaticon/font/flaticon.css">
    <!-- Theme style  -->
    <link rel="stylesheet" href="../static/css/style.css">
+   <!-- Card flip styles -->
+   <link rel="stylesheet" href="../static/css/card.css">
    <!-- Modernizr JS -->
    <script src="../static/js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -48,17 +50,23 @@
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight" style="background-color:#2C3E50;padding:20px;">
                 <div class="text-center">
                     <div class="author-img" style="background-image: url(../static/images/skp.jpeg);"></div>
-                    <h1 id="colorlib-logo"><a href="https://github.com/shani1998" style="color:antiquewhite">Shani Pathak</a></h1>
-                    <p><strong style="color: azure;">AI-Driven Automation | ML</strong></p>
-                </div>
-                <nav id="colorlib-main-menu" role="navigation" class="navbar">
-                    <div id="navbar" class="collapse">
-                        <ul>
-                           <li><input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Home"/></li>
-                        </ul>
+                    <h1 id="colorlib-logo"><a href="../index.html" style="color:antiquewhite">Shani Pathak</a></h1>
+                    <p><strong style="color: azure;">Senior Software Engineer at Infoblox</strong></p>
+                    <p style="color:#d9edf7;margin-bottom:20px;">Golang • Microservices • K8s • Cloud-Native • IPAM • Multi-Cloud • Agentic AI</p>
+                    
+                    <!-- Back to Portfolio Button -->
+                    <a href="../index.html" style="display: inline-block; background: #007b5e; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; margin: 15px 0;">
+                        <i class="fa fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                    
+                    <!-- Social Icons -->
+                    <div style="margin-top: 25px;">
+                        <a href="https://www.linkedin.com/in/cloudnativeengineer1/" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://github.com/shani1998" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-github"></i></a>
+                        <a href="mailto:shanipathak88@gmail.com" style="color: #ccc; margin: 0 10px; font-size: 22px;"><i class="fa fa-envelope"></i></a>
                     </div>
-                </nav>
-                </aside>
+                </div>
+            </aside>
 
             <div id="colorlib-main">
                <section class="colorlib-about" data-section="about">
@@ -68,32 +76,96 @@
                            <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                               <div class="col-md-12">
                                  <div class="about-desc">
-                                    <h2>Machine Learning and Artificial Intelligence</h2>
+                                    <h2>Agentic AI & ML</h2>
                                     <hr>
-                                    <p style="margin-top:8px;">Exploring how AI augments cloud platforms and networking workflows. Recent focus: agentic AI for infrastructure automation (built the "DDI Digital Agent" with MCP hosts/servers), and applied ML for healthcare.</p>
-                                    <h4><strong>Cancer Detection</strong></h4>
-                                    <p>
-                                        Using patient medical record and gene data we provide an AI Platform which helps the cancer experts to ensure
-                                        whether patient is affected by cancer or not with high accuracy and less effort, using Naive Bayes and KNN Algorithms.<br>
-                                        <strong>Skills Used:</strong> Python3.7, NumPy, Pandas, Scikit-learn, Machine Learning, NLP.<br>
-                                        <strong>Dataset & Descriptions:</strong> <a href="https://www.kaggle.com/c/msk-redefining-cancer-treatment">Personalized Medicine: Redefining Cancer Treatment</a> 
-                                    </p>
-                                    <br><br>
-                                    <h4><strong>DDI Digital Agent (Hackathon 2025 Winner)</strong></h4>
-                                    <p>
-                                       Agentic AI assistant for natural-language-driven DDI automation. Built on MCP hosts/servers to orchestrate DNS/DHCP/IPAM workflows securely across environments.<br>
-                                       <strong>Skills Used:</strong> Golang, MCP hosts/servers, IPAM, AI orchestration.
-                                    </p>
-                                    <br><br>
-                                    <h4><strong>Apparel Recommendation Engine Workshop</strong></h4>
-                                    <p>
-                                        It was online Workshop conducted by <a href="https://www.appliedaicourse.com/">Applied AI Course</a>on Amazon Apparel Recommendation Engine, 
-                                        where i leant how to build an machine learning model from scratch using various python machine learinng libraries and estimated accuracy using various supervised machine learning algorithms.<br>
-                                        <strong>Skills Used:</strong> Python3.7, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn.<br>
-                                        <strong>Dataset:</strong>The data has been taken from Amazon.com in a policy compliant manner.                                  
-                                    </p>
+                                    <p style="margin-top:8px;">Exploring how AI augments cloud platforms and networking workflows. Recent focus: agentic AI for infrastructure automation.</p>
                                  </div>
                               </div>
+                           </div>
+
+                           <!-- Project Cards -->
+                           <div class="row">
+                              <!-- Project 1 -->
+                              <div class="col-xs-12 col-sm-6 col-md-4">
+                                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                    <div class="mainflip">
+                                       <div class="frontside">
+                                          <div class="card">
+                                             <div class="card-body text-center">
+                                                <p><i class="fa fa-robot fa-4x" style="color:#2C3E50; margin-top:20px;"></i></p>
+                                                <h4 class="card-title">DDI Digital Agent</h4>
+                                                <p class="card-text">Agentic AI assistant for DDI automation.</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i> Flip Details</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="backside">
+                                          <div class="card">
+                                             <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">AI Automation</h4>
+                                                <p class="card-text">Natural-language-driven orchestration of DNS/DHCP/IPAM tasks using MCP hosts/servers. Hackathon Winner 2025.</p>
+                                                <p class="card-text"><strong>Tech:</strong><br>Golang, MCP, LLMs</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <!-- Project 2 -->
+                              <div class="col-xs-12 col-sm-6 col-md-4">
+                                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                    <div class="mainflip">
+                                       <div class="frontside">
+                                          <div class="card">
+                                             <div class="card-body text-center">
+                                                <p><i class="fa fa-heartbeat fa-4x" style="color:#2C3E50; margin-top:20px;"></i></p>
+                                                <h4 class="card-title">Cancer Detection AI</h4>
+                                                <p class="card-text">ML Platform for cancer prediction using gene data.</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i> Flip Details</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="backside">
+                                          <div class="card">
+                                             <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Medical ML</h4>
+                                                <p class="card-text">Classified gene mutations (Naive Bayes/KNN) to assist cancer diagnosis with high accuracy.</p>
+                                                <p class="card-text"><strong>Tech:</strong><br>Python, Pandas, Scikit-learn</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <!-- Project 3 -->
+                              <div class="col-xs-12 col-sm-6 col-md-4">
+                                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                    <div class="mainflip">
+                                       <div class="frontside">
+                                          <div class="card">
+                                             <div class="card-body text-center">
+                                                <p><i class="fa fa-shopping-bag fa-4x" style="color:#2C3E50; margin-top:20px;"></i></p>
+                                                <h4 class="card-title">Recommender Sys</h4>
+                                                <p class="card-text">Apparel recommendation system using Amazon data.</p>
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i> Flip Details</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="backside">
+                                          <div class="card">
+                                             <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">ML Recommender</h4>
+                                                <p class="card-text">Built from scratch to recommend apparel based on user preferences.</p>
+                                                <p class="card-text"><strong>Tech:</strong><br>Python, NumPy, Scikit-learn</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
                            </div>
                         </div>
                      </div>

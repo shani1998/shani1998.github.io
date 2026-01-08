@@ -8,6 +8,20 @@
    <meta name="description" content="Portfolio webpage of Shani Pathak" />
    <meta name="keywords" content="portfolio,website,personal website,github,projects,computer science and engineering" />
    <meta name="author" content="Shani Pathak" />
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://shani1998.github.io/">
+   <meta property="og:title" content="Shani Pathak - Cloud Native Engineer">
+   <meta property="og:description" content="Portfolio of Shani Pathak. Senior Software Engineer specializing in Go, Kubernetes, and Cloud Platforms.">
+   <meta property="og:image" content="https://shani1998.github.io/static/images/skp.jpeg">
+
+   <!-- Twitter -->
+   <meta property="twitter:card" content="summary_large_image">
+   <meta property="twitter:url" content="https://shani1998.github.io/">
+   <meta property="twitter:title" content="Shani Pathak - Cloud Native Engineer">
+   <meta property="twitter:description" content="Portfolio of Shani Pathak. Senior Software Engineer specializing in Go, Kubernetes, and Cloud Platforms.">
+   <meta property="twitter:image" content="https://shani1998.github.io/static/images/skp.jpeg">
+
    <!--Social Media icons-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -45,13 +59,18 @@
          <nav id="colorlib-main-menu" role="navigation" class="navbar">
             <div id="navbar" class="collapse">
                <ul>
-                  <li><a href="#" data-nav-section="about" style ="color: #ccc;">About</a></li>
-                  <li><a href="#" data-nav-section="skills" style ="color: #ccc;">Skills</a></li>
-                  <li><a href="#" data-nav-section="experience" style ="color: #ccc;">Work Experience</a></li>
-                  <li><a href="#" data-nav-section="education" style ="color: #ccc;">Education</a></li>
-                  <li><a href="#" data-nav-section="achievements" style ="color: #ccc;">Achievements</a></li>
-                  <li><a href="#" data-nav-section="contact" style ="color: #ccc;">Contact</a></li>
+                  <li><a href="#" data-nav-section="about" style ="color: #ccc;"><i class="fa fa-home"></i> About</a></li>
+                  <li><a href="#" data-nav-section="skills" style ="color: #ccc;"><i class="fa fa-code"></i> Skills</a></li>
+                  <li><a href="#" data-nav-section="experience" style ="color: #ccc;"><i class="fa fa-briefcase"></i> Work Experience</a></li>
+                  <li><a href="#" data-nav-section="education" style ="color: #ccc;"><i class="fa fa-graduation-cap"></i> Education</a></li>
+                  <li><a href="#" data-nav-section="achievements" style ="color: #ccc;"><i class="fa fa-trophy"></i> Achievements</a></li>
+                  <li><a href="#" data-nav-section="contact" style ="color: #ccc;"><i class="fa fa-envelope"></i> Contact</a></li>
                </ul>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://www.linkedin.com/in/cloudnativeengineer1/" style="color: #ccc; margin: 0 10px; font-size: 20px;"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/shani1998" style="color: #ccc; margin: 0 10px; font-size: 20px;"><i class="fa fa-github"></i></a>
+                <a href="mailto:shani.pathak98@gmail.com" style="color: #ccc; margin: 0 10px; font-size: 20px;"><i class="fa fa-envelope"></i></a>
             </div>
          </nav>
       </aside>
@@ -83,7 +102,7 @@
          </section>
 
          <!---------------About me---------------------->
-         <section class="colorlib-about" data-section="about">
+         <section id="about" class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-12">
@@ -112,8 +131,8 @@
                         <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                            <a href="templates/ml.html" >
                               <div class="services color-2">
-                                 <span class="icon2"><i class="fa fa-object-ungroup"></i></span>
-                                 <h3>Machine Learning</h3>
+                                 <span class="icon2"><i class="fa fa-magic"></i></span>
+                                 <h3>Agentic AI & ML</h3>
                               </div>
                            </a>
                         </div>
@@ -149,7 +168,7 @@
          </section>
 
          <!------Skills---------------->
-         <section class="colorlib-skills" data-section="skills">
+         <section id="skills" class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="background-color:#ECF5FF;">
@@ -265,7 +284,7 @@
          
 
          <!-------------Work Experience---------------------->
-         <section class="colorlib-experience" data-section="experience">
+         <section id="experience" class="colorlib-experience" data-section="experience">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="background-color:#ECF5FF;">
@@ -339,7 +358,7 @@
          </section>
 
          <!----------------Education---------------->
-         <section class="colorlib-experience" data-section="education">
+         <section id="education" class="colorlib-experience" data-section="education">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="background-color:#ECF5FF;">
@@ -378,7 +397,7 @@
          </section>
 
          <!--------Contact---------->
-         <section class="colorlib-contact" data-section="contact">
+         <section id="contact" class="colorlib-contact" data-section="contact">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-12">
@@ -393,7 +412,7 @@
          </section>
          
          <!-- Certifications & Achievements -->
-         <section class="colorlib-about" data-section="achievements">
+         <section id="achievements" class="colorlib-about" data-section="achievements">
             <div class="colorlib-narrow-content">
                <div class="row">
                   <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft" style="background-color:#ECF5FF;">
@@ -414,22 +433,6 @@
                   </div>
                </div>
             </div>
-         </section>
-
-         <!--------Send Email ------->
-         <section class="colorlib-installation" >
-            <form id="contactForm" action="/sendEmail" method="POST">
-               <div class="col-sm-6 form-group">
-                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-               </div>
-               <div class="col-sm-6 form-group">
-                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-               </div>
-               <textarea class="form-control" id="comments" name="message" placeholder="Comment" rows="5"></textarea><br>
-               <div class="col-sm-12 form-group">
-                  <button class="btn btn-default pull-right" type="submit">Send</button>
-               </div>
-            </form>
          </section>
 
 

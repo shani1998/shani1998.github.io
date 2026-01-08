@@ -78,6 +78,7 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     background: white;
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -112,6 +113,11 @@ section .section-title {
     min-height: 312px;
 }
 
+.frontside .card .card-body,
+.backside .card .card-body {
+    padding: 20px;
+}
+
 .backside .card a {
     font-size: 18px;
     color: #007b5e !important;
@@ -126,4 +132,23 @@ section .section-title {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+/* Home button styling for template pages */
+.home-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #007b5e;
+    color: white !important;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #108d6f;
+    text-decoration: none;
+    color: white !important;
 }
